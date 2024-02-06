@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<h1>Product Management</h1>
+<div class="container">
+    <div class="left-column">
+
+        <!-- Display all products -->
+        <h2>All Products</h2>
+        <table border="1" id="productTable">
+            <!-- Product list will be dynamically populated here -->
+        </table>
+    </div>
+    <div class="right-column">
+        <!-- Edit product form -->
+        <div id="editProductWrapper" style="display: none">
+            <h2>Edit Product</h2>
+            <form id="editProductForm">
+                <input type="hidden" id="editId"/>
+                <label>Name: <input type="text" id="editName"/></label><br>
+                <label>Description: <input type="text" id="editDescription"/></label><br>
+                <label>Price: <input type="text" id="editPrice"/></label><br>
+                <button type="button" id="editButton" onclick="saveProduct()">Edit</button>
+                <button type="button" id="cancelEditButton" onclick="cleanAndHideEditForm()">Cancel</button>
+            </form>
+        </div>
+        <!-- Create new product form -->
+        <div id="createProductWrapper">
+            <h2>Create Product</h2>
+            <form id="createProductForm">
+                <label>Name: <input type="text" id="name"/></label><br>
+                <label>Description: <input type="text" id="description"/></label><br>
+                <label>Price: <input type="text" id="price"/></label><br>
+                <button type="button" onclick="createProduct()">Create</button>
+                <button type="button" onclick="cleanCreateForm()">Clear</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="js/products.js"></script>
+</body>
+</html>
